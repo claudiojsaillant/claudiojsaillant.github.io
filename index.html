@@ -1,26 +1,138 @@
-<!DOCTYPE html>
+<!DOCTYPE html>s
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
+  <link href="demo.css" rel="stylesheet" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FE 101 Day 11</title>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-
+  <link rel="stylesheet" type= "text/css" href="animate.css">
+  <link href="https://s3-us-west-2.amazonaws.com/pesticide/1.2.0/pesticide.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-	<h1>Fun video for yall!</h1>
-	<video width="320" height="240" controls>
-  	<source src="mGA5co.mp4" type="video/mp4">
 
-  </div>
 
+ <body>
+
+
+<div class="nav-wrapper">
+      <nav>
+        <ul>
+          <li class="current"> <a href="#content1"> Home </a></li>
+          <li> <a href="#content2"> About Me </a></li>
+          <li> <a href="#content3"> Portfolio </a></li>
+          <li> <a href="#content4"> Projects </a></li>
+          <li> <a href="#content5"> Contact Me! </a></li>
+        </ul>
+      </nav>
+ </div>
+
+<div class="content" id="content1">
+          <h1 class="animated wobble" 
+            data-wow-duration="1.5s" data-wow-delay=".5s">
+              What's up, I'm Claudio</h1>
+          <h2 class="animated bounceInDown" data-wow-delay="2s">Im a person who likes started <span style="color:red">programming</span> 2 months ago
+          <br> I like <span style="color:red">videogames a lot</span> and I love <span style="color:red">playing football!</span></h2>
+        </div>
+
+
+        <div class="content" id="content2">
+          <h1><a href="CV_TEMPLATE-02.jpg" rel="thumbnail">More About Me</a></h1>
+          <img class="card" src="card.gif">
+          <h3> My Objectives </h3>
+            <p>I began my coding journey now in 2017 taking tihs course here in Atlanta, Georgia. I'm willing to take experience soon on web designing and graphic designing</p> 
+        </div>
+
+        <div class="content" id="content3">
+	       <h1>Fluent in the tools Adobe. (That's a joke, can you get it?)</h1>
+	    <div class="icons"> 
+        	<img class="ai" src="ai.png">
+        	<img class="ps" src="ps.png">
+        	<img class="id" src="id.png">
+        	<img class="br" src="br.png">
+      	</div>
+      	</div>
+
+        
+		<div class="content" id="content4" data-stellar-background-ratio="0.5"> 
+         	<h1 > My Actual Projects </h1>
+        	<img id="editorial" class="wow animated zoomIn" data-wow-duration=".6s" data-wow-delay=".7s"src="editorial.jpg"> 
+       		<img id="pattern3" class = "wow animated zoomIn" 
+          	data-wow-duration=".6s" data-wow-delay=".7s"src="pattern3.jpg">
+         	<img id="twtter" class= "wow animated zoomIn"data-wow-duration=".8s" data-wow-delay=".7s" src="twitter.jpg">
+        	<img id="abc" class = "wow animated zoomIn" 
+          	data-wow-duration=".6s" data-wow-delay=".7s"src="abc.jpg">
+         	<img id="pattern2" class = "wow animated zoomIn" 
+          	data-wow-duration=".6s" data-wow-delay=".7s"
+          	src="pattern2.jpg">
+           	<img id="tyler" class = "wow animated zoomIn" 
+          	data-wow-duration=".6s" data-wow-delay=".7s"
+          	src="tyler.jpg">
+          	<img id="ikea" class = "wow animated zoomIn" 
+          	data-wow-duration=".6s" data-wow-delay=".7s"
+          	src="ikea.jpg">
+           	<img id="birth" class = "wow animated zoomIn" 
+          	data-wow-duration=".6s" data-wow-delay=".7s"
+          	src="birth.jpg">
+          	<img id="chin" class = "wow animated zoomIn" 
+          	data-wow-duration=".6s" data-wow-delay=".7s"
+          	src="chin.jpg">
+      	</div>
+
+		<div class="content" id="content5">
+			<h1>You can allways get in touch with me</h1> 
+			<div class="social">
+			<a href="https://twitter.com/claudiosaillant"><img id="twitter" class= "wow animated zoomIn"data-wow-duration=".8s" data-wow-delay=".7s" src="twitter.png"></a>
+			<a href="https://www.linkedin.com/"><img id="linked" class= "wow animated zoomIn"data-wow-duration=".8s" data-wow-delay=".7s" src="linkd.png"></a>
+			<a href="https://www.facebook.com/claudio.saillant"><img id="facebook" class= "wow animated zoomIn"data-wow-duration=".8s" data-wow-delay=".7s" src="fcb.png"></a>
+			<a href="https://www.instagram.com/claudiosaillant/?hl=es"><img id="instagram" class= "wow animated zoomIn"data-wow-duration=".8s" data-wow-delay=".7s" src="ig.png"></a>
+			</div>
+		</div>
+
+
+        </div>  
+
+
+
+
+
+
+
+
+<script src="stellar.js"></script>
+<script src="wow.min.js"></script>
+<script> new WOW().init(); </script>
+<script src="main.js"></script>
+<script src="jquery.nav.js"> </script>
 <script>
+$(document).ready(function(){
 
-  $(document).ready(function() {
+        $(".nav-wrapper ul").onePageNav({
+          scrollSpeed: 2000
+        });
 
-  });
+        var menu = $(".nav-wrapper nav");
+    
+        $("#menu-icon").click(function() {
+          menu.slideToggle();
+
+        $(window).resize(function() {
+          var w = $(window).width();
+
+          // width is greatern then 768 and nav is hidden
+          if(w > 768 && $(".nav-wrapper nav").is(":hidden")) {
+            $(".nav-wrapper nav").removeAttr('style');
+
+
+                }
+
+            });
+
+         });
+
+      });
 
 </script>
 
